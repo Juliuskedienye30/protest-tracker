@@ -1,0 +1,454 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #06d3eec4; /* light sky blue */
+  color: #124477; /* indigo-black for text */
+  line-height: 1.6;
+  background-image: url(../image/kk.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #f0b0b0; /* sky blue variant */
+  color: rgb(0, 0, 0);
+  padding: 15px 20px;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+    position: fixed;
+
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+    color: #010a13; /* indigo-black for logo */
+    text-decoration: none;
+    
+}
+
+.nav-toggle {
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  color: rgb(180, 18, 18);
+  cursor: pointer;
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+
+}
+
+/* Auth Section */
+#auth-section {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #70c1cc;
+
+}
+
+.card-3d-wrap {
+  width: 360px;
+  height: 400px;
+  perspective: 800px;
+}
+
+.card-3d-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 600ms ease-in-out;
+}
+
+.card-front, .card-back {
+  background: rgb(218, 118, 188);
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+input.checkbox:checked ~ label + .card-3d-wrap .card-3d-wrapper {
+  transform: rotateY(180deg);
+}
+
+.form-style {
+  padding: 15px 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.input-icon {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 18px;
+  color: #999;
+}
+
+.btn {
+  background-color: #00acc1;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #0097a7;
+}
+
+/* Main App */
+#main-app {
+  padding: 20px;
+}
+
+#controls {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Protest Layout */
+.protest-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
+    border-radius: 50px;   
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+    position: relative; 
+    z-index: 1; /* Ensure it appears above the background image */
+
+}
+
+#protest-list, #add-protest {
+  flex: 1;
+  /* min-width: 320px; */
+  max-width: 800px;
+    margin: 20px;
+
+}
+
+#protest-detail {
+  width: 100%;
+  margin-top: 30px;
+  background: rgb(219, 214, 214);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 2; /* Ensure it appears above the background image */
+
+}
+
+/* Protest Items */
+.protest-item {
+  background-color: #ffffff;
+  border-left: 5px solid #00bbd4f6;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.protest-item:hover {
+  background-color: #5fc59e;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+
+}
+
+/* Add Protest */
+#add-protest {
+  background: #ffffff;
+  border: 50px solid #ddd;
+  padding: 50px;
+    margin: 20px;
+
+  border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Contact */
+#contact {
+  background-color: #e0f2f1;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  color: #0c0c0c;
+}
+
+/* Buttons in protest details */
+.edit-btn, .delete-btn {
+  background-color: #29b6f6;
+  color: white;
+  border: none;
+  padding: 30px 80px;
+  margin: 30px 5px 0 0;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.edit-btn:hover {
+  background-color: #0288d1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+
+}
+
+.delete-btn {
+  background-color: #ef5350;
+    color: white;
+    
+}
+
+.delete-btn:hover {
+  background-color: #c62828;
+
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background-color: #00acc1;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .protest-layout {
+    flex-direction: column;
+  }
+
+  #protest-detail {
+    margin-top: 20px;
+  }
+}
+.card-front,
+.card-back {
+  background: rgba(255, 255, 255, 0.3); /* semi-transparent white */
+  backdrop-filter: blur(10px);         /* optional: adds a frosted-glass effect */
+  border-radius: 10px;
+  box-shadow: none;                    /* remove harsh shadows */
+}
+.card-front {
+  color: #010a13; /* indigo-black for text */
+}
+/* Image styling */
+.protest-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+/* Button group to keep buttons inline */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Button styles */
+.edit-btn,
+.delete-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.95rem;
+  width: auto;          /* prevents full-width stretch */
+  display: inline-block;
+}
+
+.edit-btn {
+  background-color: #5dade2; /* light indigo-blue */
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e74c3c; /* red-ish */
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #3498db;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+  .info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 40px;
+    justify-content: center;
+    background-color: #1f2029;
+    border-radius: 20px;
+    margin-top: 60px;
+  }
+
+  .info-container {
+    background: #9494ac;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    border-radius: 12px;
+    overflow: hidden;
+    flex: 1 1 300px; /* Flex-grow, flex-shrink, and base width */
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(216, 205, 205, 0.5);
+    transition: transform 0.3s ease;
+
+  }
+
+  .info-container:hover {
+    transform: scale(1.03);
+  }
+
+  .info-container img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .info-container h3 {
+    margin: 16px 16px 8px;
+    font-size: 1.5rem;
+    color: #ffe163;
+  }
+
+  .info-container p {
+    margin: 0 16px 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .info-container a {
+    display: block;
+    margin: 0 16px 16px;
+    color: #ffeba7;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .info-container a:hover {
+    color: #ffffff;
+  }
+@media (max-width: 600px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar input,
+  .search-bar select,
+  .search-bar button {
+    width: 100%;
+  }
+}
+/* 🔎 Controls Section Styling */
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background-color: #2a2a3d;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 30px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#controls input,
+#controls select {
+  background-color: #1f1f2e;
+  color: #ffeba7;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  width: 200px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#controls input::placeholder {
+  color: #ccc;
+}
