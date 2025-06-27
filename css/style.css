@@ -24,13 +24,13 @@ h1, h2, h3 {
 
 /* Navbar */
 .navbar {
-  background-color: #f0b0b0; /* sky blue variant */
+  background-color: #a39494; /* sky blue variant */
   color: rgb(0, 0, 0);
   padding: 15px 20px;
   display: flex; 
   justify-content: space-between;
-  align-items: center; 
-    position: fixed;
+  /* align-items: center; 
+    position: fixed; */
 
 }
 
@@ -58,7 +58,7 @@ h1, h2, h3 {
 }
 
 .nav-links a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-weight: bold;
 }
@@ -74,11 +74,12 @@ h1, h2, h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #70c1cc;
+  background-color: #22aaa3;
 
 }
 
 .card-3d-wrap {
+    background-color: rgb(5, 81, 104);
   width: 360px;
   height: 400px;
   perspective: 800px;
@@ -238,14 +239,12 @@ input, select, button {
 
 /* Buttons in protest details */
 .edit-btn, .delete-btn {
-  background-color: #29b6f6;
-  color: white;
-  border: none;
-  padding: 30px 80px;
-  margin: 30px 5px 0 0;
-  border-radius: 50px;
+    padding: 10px 20px;
+  background-color: #034564;
+  color: rgb(17, 16, 16);
   cursor: pointer;
   font-size: 0.9rem;
+
 }
 
 .edit-btn:hover {
@@ -287,13 +286,11 @@ input, select, button {
     display: flex;
   }
 
-  .protest-layout {
-    flex-direction: column;
-  }
-
+  
+/* 
   #protest-detail {
     margin-top: 20px;
-  }
+  } */
 }
 .card-front,
 .card-back {
@@ -321,35 +318,7 @@ input, select, button {
 }
 
 /* Button styles */
-.edit-btn,
-.delete-btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 0.95rem;
-  width: auto;          /* prevents full-width stretch */
-  display: inline-block;
-}
 
-.edit-btn {
-  background-color: #5dade2; /* light indigo-blue */
-  color: white;
-}
-
-.delete-btn {
-  background-color: #e74c3c; /* red-ish */
-  color: white;
-}
-
-.edit-btn:hover {
-  background-color: #3498db;
-}
-
-.delete-btn:hover {
-  background-color: #c0392b;
-}
 
   .info-section {
     display: flex;
@@ -451,4 +420,60 @@ input, select, button {
 
 #controls input::placeholder {
   color: #ccc;
+}
+
+#protest-detail {
+  width: 100%;
+  margin-top: 30px;
+  background: rgb(219, 214, 214);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Edit and Delete Buttons */
+.edit-btn,
+.delete-btn {
+    background-color: black;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+  
+}
+
+.edit-btn {
+  background-color: #5dade2;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.edit-btn:hover {
+  background-color: #3498db;
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
 }

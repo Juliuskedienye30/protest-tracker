@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "jane",
       "password": "1234",
       "avatar": "https://i.pravatar.cc/100?u=jane"
@@ -45,11 +45,21 @@
       "id": "6c19",
       "username": "Julius",
       "password": "Jk@00"
+    },
+    {
+      "id": "f02b",
+      "username": "Julius",
+      "password": "123"
+    },
+    {
+      "id": "5119",
+      "username": "kedienye",
+      "password": "123"
     }
   ],
   "protests": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Youth Protest",
       "cause": "Education",
       "location": "Nairobi",
@@ -110,24 +120,6 @@
       "date": "2025-06-18",
       "status": "ongoing",
       "link": "https://cdn.pixabay.com/photo/2023/11/06/14/44/ai-generated-8369771_1280.png"
-    },
-    {
-      "id": "1b40",
-      "title": "Teachers",
-      "cause": "Salary",
-      "location": "Nairobi",
-      "date": "2025-06-25",
-      "status": "ongoing",
-      "link": "https://media.istockphoto.com/id/1224661128/photo/silhouette-of-raised-arms-and-clenched-fists-on-the-background-of-the-flag-of-kenya-the.jpg?s=1024x1024&w=is&k=20&c=cjEVaJ-W2E0aGhkeBpgeDa7GMn4V7U3UuVNqVBEsLGY="
-    },
-    {
-      "id": "33c6",
-      "title": "Teachers",
-      "cause": "Salary",
-      "location": "Nairobi",
-      "date": "2025-06-25",
-      "status": "ongoing",
-      "link": "https://media.istockphoto.com/id/1224661128/photo/silhouette-of-raised-arms-and-clenched-fists-on-the-background-of-the-flag-of-kenya-the.jpg?s=1024x1024&w=is&k=20&c=cjEVaJ-W2E0aGhkeBpgeDa7GMn4V7U3UuVNqVBEsLGY="
     }
   ]
 }

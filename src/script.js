@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://tracker-api-knvr.onrender.com";
 const USERS_URL = `${BASE_URL}/users`;
 const PROTESTS_URL = `${BASE_URL}/protests`;
 
@@ -91,17 +91,21 @@ function displayProtests(protests) {
 
 function showDetails(protest) {
   detailContainer.innerHTML = `
-  <h3>${protest.title}</h3>
-  <p><strong>Cause:</strong> ${protest.cause}</p>
-  <p><strong>Date:</strong> ${protest.date}</p>
-  <p><strong>Status:</strong> ${protest.status}</p>
-  <p><strong>Location:</strong> ${protest.location}</p>
-  ${protest.link ? `<img src="${protest.link}" alt="Protest Image" class="protest-image" />` : ""}
-  <div class="button-group">
-    <button class="edit-btn" onclick="editProtest(${protest.id})">Edit</button>
-    <button class="delete-btn" onclick="deleteProtest(${protest.id})">Delete</button>
-  </div>
+    <h3>${protest.title}</h3>
+    <p><strong>Cause:</strong> ${protest.cause}</p>
+    <p><strong>Date:</strong> ${protest.date}</p>
+    <p><strong>Status:</strong> ${protest.status}</p>
+    <p><strong>Location:</strong> ${protest.location}</p>
+    ${protest.link ? `<img src="${protest.link}" alt="Protest Image" class="protest-image" />` : ""}
+    <div class="button-group">
+      <button id="edit-btn">Edit</button>
+      <button id="delete-btn">Delete</button>
+    </div>
   `;
+
+  // Dynamically attach event listeners to new buttons
+  document.getElementById("edit-btn").addEventListener("click", () => editProtest(protest.id));
+  document.getElementById("delete-btn").addEventListener("click", () => deleteProtest(protest.id));
 }
 
 function addProtest(e) {
@@ -150,8 +154,10 @@ function editProtest(id) {
       document.getElementById("status").value = protest.status;
       document.getElementById("link").value = protest.link;
 
+      // Override form submission for editing
       protestForm.onsubmit = function (e) {
         e.preventDefault();
+
         const updatedProtest = {
           title: document.getElementById("title").value,
           cause: document.getElementById("cause").value,
@@ -168,7 +174,7 @@ function editProtest(id) {
         })
           .then(() => {
             protestForm.reset();
-            protestForm.onsubmit = addProtest;
+            protestForm.onsubmit = addProtest; // Restore default
             loadProtests();
             detailContainer.innerHTML = "Protest updated successfully.";
           });
